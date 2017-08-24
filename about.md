@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer together, but seems pretty challenging here, doesn't it? Allow me to introduce myself before, and afterwards you are invited to contact me by any channel, though an [*email*](mailto:ricardokleinklein@gmail.com) is always a desirable option.
+Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer together, but seems pretty challenging here, doesn't it? Allow me to introduce myself before, and afterwards you are invited to contact me by any channel, though an [email](mailto:ricardokleinklein@gmail.com) is always a desirable option.
 <hr>
 
 # Formal education
