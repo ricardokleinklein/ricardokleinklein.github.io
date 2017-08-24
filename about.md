@@ -42,6 +42,6 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 
 <br>
 
-Looking forward to hearing from you! I'll try to provide an answer to every question posed, or seek for one.
+Looking forward to hearing from you! I'll try to provide an answer to every question posed, or seek one.
 
 *Disclaimer -- This is particularly relevant if you're about to offer me a research position. In that case, you are indeed encouraged to contact me, and do not forget the beer!*
