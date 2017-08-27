@@ -4,7 +4,7 @@ title: Easy GUI design in Matlab (I)
 author: Ricardo Faúndez-Carrasco
 ---
 
-When you make a click your computer, when you type something in a text editor, when you scroll down using a slidebar... Everytime you do that, you are interacting with computer programmes by means of a Graphical User Interface (GUI). 
+When you make a click on your computer, when you type something in a text editor, when you scroll down using a slidebar... Everytime you do that, you are interacting with computer programmes by means of a Graphical User Interface (GUI). 
 
 GUIs are a wonderful thing. It makes our lifes much easier, allowing us to focus on what we want to do with the computer rather than thinking how to do it. Instead of typing a long set of commands in the terminal, we can just click on *"save"*, and the document we are working on on the screen is safely stored in the blink of an eye. That's a great shot. During my studies I had to code a lot of simulations (believe me, a lot) in order to understand many physical laws, and sideways pass my exams. The range of topics was huge: from simple ones like the law of conservation of momentum, to galactic motion, gas theory or quantum dynamics. However, there was a permanent problem for most of my classmates: they knew how to code any given physical system, but they failed in making it readable, understandable. Rather than moving the point of view of the camara to span the whole system, they had to struggle with the code every single time they wanted the system to actually perform the simulation under any minimal change in the original conditions of the problem. This is, not a single coefficient could be  changed in real time, making those simulations far from practical.
 
@@ -34,7 +34,7 @@ The main call of designing a GUI is its functionality. In order to achieve that 
 
 <script src="https://gist.github.com/ricardokleinklein/127a50243c19cc7db9ae5fb213517071.js"></script>
 
-In the snippet above, I have created a *button* object with a piece of text on it. The most important line, though, is the last one, when we set the callback function `plot_sine` to be applied over the objects contained within the structure `handles`. Note that the kind of the object is defined in the tag *style* of the *uicontrol* label. It just takes to change the value `push` to `slide` if you want a sidebar, and just like that, many other objects.
+In the snippet above, I have created a *button* object with a piece of text on it. The most important line, though, is the last one, when we set the callback function `plot_sine to be applied over the objects contained within the structure `handles`. Note that the kind of the object is defined in the tag *style* of the *uicontrol* label. It just takes to change the value `push` to `slide` if you want a sidebar, and just like that, many other objects.
 
 ![GUI with a non-sense push button](/images/GUI/button1.png)
 
