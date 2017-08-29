@@ -37,7 +37,7 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 
 * **Languages** -- Spanish (`Native`) / English (`C1`) / Japanese (`N5`) / French (`B1)
 * **Programming Languages** -- Python / C/C++ / R / Java / Matlab & Simulink
-* **Speech and NLP-related** -- HTK / Kaldi / HTS
+* **Speech Processing and NLP-related** -- HTK / Kaldi / HTS
 * **Machine & Deep Learning** -- Tensorflow / Keras / Pytorch / Theano / DEAP / scikit-learn
 
 <br>
