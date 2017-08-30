@@ -2,7 +2,7 @@
 
 This is the repository containing the files required to deploy a blog on Github pages. [Checkout the website](https://ricardokleinklein.github.io).
 
-![screenshot]()
+![screenshot](/images/screenshot.png)
 
 ## Contents At-A-Glance
 
