@@ -6,6 +6,21 @@ This is the repository containing the files required to deploy a blog on Github 
 
 ## Contents At-A-Glance
 
+This theme has all the necessary files and directories required to have a new Jekyll site up and running in no time, with zero-configuration.
+
+### Layouts
+
+### Includes
+
+### Sass
+
+### Enabling comments via Discus
+
+### Enabling Google Analytics
+
+## Contributing
+
+
 ## License
 
 MIT License
