@@ -106,6 +106,12 @@ As you can see, the loss is greater in the first model, thus it has not learned 
 
 ## On the training time
 
-So far we have found that a neural network with just one hidden layer with around $$300$$ neurons is pretty close to the benchmark results published by the dataset's authors. However, we have not achieved the same good results. At this point it'd be reasonable to ask yourself why.
+So far we have found that a neural network with just one hidden layer with around $$300$$ neurons is pretty close to the benchmark results published by the dataset's authors. However, we have not achieved the same good results yet. At this point it'd be reasonable to ask yourself why.
 
-Now I am going to show a common misconception about neural networks. A lot of people tend to think, due to a lack of knowledge I guess, that the more a net is trained, the better it'll perform. **This is not always true**. It is important to highlight this point: as a rule, a net needs to be trained over a large corpus. But the best measurement of how well the training is going is the value of the loss function. It should decrease with the number of iterations, but this trend has a limit: be extremely worried in case your loss function takes values close to zero. That probably just means that your model is overfitting to the training data, and thus making a poor generalization, so expect poor results on the test set.
+One possible line of action is to increase the training in terms of epochs, since the number of samples is fixed.
+
+76.85 -- 100
+80.79 -- 1000
+81.00 -- 10000
+82.82 -- 100000
+84.95 -- 1000000
