@@ -11,7 +11,9 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 
 * **MSc. in Computational and Mathematical Engineering** *(2016 -- 2018)* -- Universitat Oberta of Catalunya & Universitat Rovira i Virgili
 * **MSc. in Automation and Robotics** *(2015 -- 2017)* -- Technical University of Madrid
+	- Thesis: *Deep Learning strategies for the enhancement of Automatic Speech Recognition Architectures* -- Grade: 10/10
 * **Bachelor in Physics** *(2010 -- 2015)* -- Universidad Autónoma de Madrid
+	- Thesis: *Isotropic-Nematic-Liquid crystal phase transition: A lattice model* -- Grade: 8.8/10
 
 # Main roles
 
@@ -35,7 +37,7 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 
 # Skills
 
-* **Languages** -- Spanish (`Native`) / English (`C1`) / Japanese (`N5`) / French (`B1)
+* **Languages** -- Spanish (`Native`) / English (`C1`) / Japanese (`N5`) / French (`B1`)
 * **Programming Languages** -- Python / C/C++ / R / Java / Matlab & Simulink
 * **Speech Processing and NLP-related** -- HTK / Kaldi / HTS
 * **Machine & Deep Learning** -- Tensorflow / Keras / Pytorch / Theano / DEAP / scikit-learn

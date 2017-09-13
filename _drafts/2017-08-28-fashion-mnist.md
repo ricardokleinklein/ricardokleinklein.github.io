@@ -110,8 +110,8 @@ So far we have found that a neural network with just one hidden layer with aroun
 
 One possible line of action is to increase the training in terms of epochs, since the number of samples is fixed.
 
-76.85 -- 100
-80.79 -- 1000
-81.00 -- 10000
-82.82 -- 100000
-84.95 -- 1000000
+76.85 75.00 -- 100
+80.79 81.30 -- 1000
+81.00 82.09 -- 10000
+82.82 82.70 -- 100000
+84.95 85.27 -- 1000000
