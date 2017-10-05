@@ -18,7 +18,7 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 # Main roles
 
 * **Research Intern** at *National Institute of Informatics (NII)* in Tokyo -- From October 2017 to April 2018.
-	- Word embeddings for the enhancement of prosodic features in speech synthesis.
+
 * **Co-founder** at *Proyecto Nautilus* -- From January 2017 to now.
 	- Framed within the *ActúaUPM XIV* start-up competition, hosted by the Technical University of Madrid.
 	- Ranked in the Top 50 bussiness ideas among more than 500 competitors.

@@ -24,6 +24,7 @@ Refers to snippets of code within the `_includes` directory that can be inserted
 * `svg-icons.html` --  Inserts github, twitter, Facebook and other ids with respective icons.
 * `analytics.html` -- Inserts Google Analytics module.
 * `disqus.html` -- Code to markup disqus comment box.
+* `meta.html` -- Include some meta data for searching purposes (still on progress).
 
 ### Sass
 
