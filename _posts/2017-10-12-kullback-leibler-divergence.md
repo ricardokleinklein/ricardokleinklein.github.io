@@ -40,7 +40,7 @@ $$ D_{KL}(p \mid \mid q) = \int_x p(x)\log p(x) dx - \int_x p(x) \log q(x) dx = 
 
 which can also be written as
 
-$$ D_{KL}(p \mid \mid q) = \mathbb{E}{x \sim p} \log p(x) - \mathbb{E}{x \sim p} \log q(x) = \mathbb{E}_{x \sim p} \left[ \log p(x) - \log q(x) \right] $$
+$$ D_{KL}(p \mid \mid q) = \mathbb{E}_{x \sim p} \log p(x) - \mathbb{E}_{x \sim p} \log q(x) = \mathbb{E}_{x \sim p} \left[ \log p(x) - \log q(x) \right] $$
 
 which is easy to see is equivalent to
 
