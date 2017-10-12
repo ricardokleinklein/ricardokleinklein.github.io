@@ -67,7 +67,7 @@ Condition 2 poses a particularly relevant question: as you probably remember, $$
 
 KL divergence belongs to a bigger family of statistical distances, the [*f-divergences*](http://www.renyi.hu/~csiszar/Publications/Information_Theory_and_Statistics:_A_Tutorial.pdf), which are very well-known since they present many properties that turn out to be extremely useful in a broad range of problems. Not all them are fit to be solved by these divergences, though.
 
-# Equivalence with the likelihood minimization
+# Equivalence with the likelihood maximization
 
 In this section I am going to focus in the actual application of the KL divergence to machine learning problems. 
 
@@ -110,6 +110,6 @@ What this fact tells us is that it doesn't matter whether you train your models 
 
 Here the *Kullback-Leibler divergence* has been introduced, and it has been shown how important it is for any AI or Machine Learning enthusiast to understand its importance. However, KL divergence and other f-divergences are not the only way the distance between two probability distribution can be measured. 
 
-In fact, this topic has attracted a lot of attention lately due to the rising of [*Generative Adversarial Networks*](https://arxiv.org/abs/1701.00160) (GANs) and [*Variational Autoencoders*](https://arxiv.org/abs/1606.05908) (VAEs), where the way we estimate the difference between two densities is fundamental in the performance of the system. This way, authors have came up with new statistical distances, which are also metrics; I particularly recommend the [*Wasserstein GAN*]() and the [*Cramér GAN*](), each of them presenting very appealing properties, though the latter is generally assumed to perform better. I will not talk about them here, but just let say that whereas KL divergence does not take into account the geometry of the densities space, these metrics do, considerably brushing up the potential performance and removing many limitations currently found in many GAN's architectures.
+In fact, this topic has attracted a lot of attention lately due to the rising of [*Generative Adversarial Networks*](https://arxiv.org/abs/1701.00160) (GANs) and [*Variational Autoencoders*](https://arxiv.org/abs/1606.05908) (VAEs), where the way we estimate the difference between two densities is fundamental in the performance of the system. This way, authors have came up with new statistical distances, which are also metrics; I particularly recommend the [*Wasserstein GAN*](https://arxiv.org/abs/1701.07875) and the [*Cramér GAN*](https://arxiv.org/abs/1705.10743), each of them presenting very appealing properties, though the latter is generally assumed to perform better. I will not talk about them here, but just let say that whereas KL divergence does not take into account the geometry of the densities space, these metrics do, considerably brushing up the potential performance and removing many limitations currently found in many GAN's architectures.
 
 This is a fascinating topic on which I highly recommend a deep study, for it gives you an amazing amount of knowledge on the very roots of how machine learning algorithms do work. And of course, leave a comment with any question or suggestion you have.
