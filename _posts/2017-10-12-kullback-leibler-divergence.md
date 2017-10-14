@@ -6,6 +6,8 @@ author: Ricardo Faundez-Carrasco
 
 Reality is usually far more complex than the models we use to describe it. This means that whenever we make use of a model, unless it is exactly the same as the original system, there will be a net loss of information, meaning that the model will contain less information and will not perfectly reflect all the features and/or properties that it should. Obviously, we would like this loss of information to be as small as possible.
 
+> All models are wrong, but some are useful. -- George E. P. Box
+
 This is particularly true in Statistics and Probability theory, where many times we seek to compare how close two probability distributions (let them be $$p$$ and $$q$$) are from each other. If you have worked on machine learning, you'll probably have seen this situation a lot of times. In fact, what almost every learning algorithm out there is doing is optimizing some sort of distance between probability densities (or distributions). In light of it, we could think of the probability $$p$$ as that corresponding to the physical system we want to model, with $$q$$ a probability distribution we want to make as similar as $$p$$ as it can be. The latter, if our model is properly designed, should get closer and closer to $$p$$ as long as the set of parameters $$\theta$$ that define it are progessively tuned during training time. Thus, assuming that $$p$$ and $$q$$ are probability distributions over $$\mathcal{X}$$ with $$x \in \mathcal{X}$$, we can write them as $$p(x)$$ and $$q(x;\theta)$$, respectively. This notation is the one we shall use along this post.
 
 ![Example of the probability distribution of a variable and its fit by a Gaussian](/images/kullback_leibler/gaussian_fit.png){: .center-image }
