@@ -67,7 +67,7 @@ Condition 2 poses a particularly relevant question: as you probably remember, $$
 * When $$p(x) = 0$$, the $$\log$$ is not defined, so the KL divergence is no longer a valid measure. It is not defined at one point at least, so the solution that came up time ago and has been used ever since has been to add some noise to the original data distribution, so $$p(x) > 0$$ everywhere.
 * If $$q(x) = 0$$, by the formula above, it would be $$p(x) / 0$$ with $$p(x) > 0$$, so $$\log \infty$$, which is also $$\infty$$. In other words, if there's no $$q(x)$$ in a place it was supposed to be, the distance between probability distributions becomes infinity.
 
-KL divergence belongs to a bigger family of statistical distances, the [*f-divergences*](http://www.renyi.hu/~csiszar/Publications/Information_Theory_and_Statistics:_A_Tutorial.pdf), which are very well-known since they present many properties that turn out to be extremely useful in a broad range of problems. Not all them are fit to be solved by these divergences, though.
+KL divergence belongs to a bigger family of statistical distances, the *f-divergences*[^1], which are very well-known since they present many properties that turn out to be extremely useful in a broad range of problems. Not all them are fit to be solved by these divergences, though.
 
 # Equivalence with the likelihood maximization
 
@@ -112,6 +112,18 @@ What this fact tells us is that it doesn't matter whether you train your models 
 
 Here the *Kullback-Leibler divergence* has been introduced, and it has been shown how important it is for any AI or Machine Learning enthusiast to understand its importance. However, KL divergence and other f-divergences are not the only way the distance between two probability distribution can be measured. 
 
-In fact, this topic has attracted a lot of attention lately due to the rising of [*Generative Adversarial Networks*](https://arxiv.org/abs/1701.00160) (GANs) and [*Variational Autoencoders*](https://arxiv.org/abs/1606.05908) (VAEs), where the way we estimate the difference between two densities is fundamental in the performance of the system. This way, authors have came up with new statistical distances, which are also metrics; I particularly recommend the [*Wasserstein GAN*](https://arxiv.org/abs/1701.07875) and the [*Cramér GAN*](https://arxiv.org/abs/1705.10743), each of them presenting very appealing properties, though the latter is generally assumed to perform better. I will not talk about them here, but just let say that whereas KL divergence does not take into account the geometry of the densities space, these metrics do, considerably brushing up the potential performance and removing many limitations currently found in many GAN's architectures.
+In fact, this topic has attracted a lot of attention lately due to the rising of *Generative Adversarial Networks* (GANs)[^2] and *Variational Autoencoders* (VAEs)[^3], where the way we estimate the difference between two densities is fundamental in the performance of the system. This way, authors have came up with new statistical distances, which are also metrics; I particularly recommend the *Wasserstein GAN*[^4] and the *Cramér GAN*[^5], each of them presenting very appealing properties, though the latter is generally assumed to perform better. I will not talk about them here, but just let say that whereas KL divergence does not take into account the geometry of the densities space, these metrics do, considerably brushing up the potential performance and removing many limitations currently found in many GAN's architectures.
 
 This is a fascinating topic on which I highly recommend a deep study, for it gives you an amazing amount of knowledge on the very roots of how machine learning algorithms do work. And of course, leave a comment with any question or suggestion you have.
+
+# References
+
+[^1]: [Csiszár, I. and Shields, P.C., (2004): "Information Theory and Statistics: A Tutorial", Foundations and Trends in Communications and Information Theory Volume 1 Issue 4, 2004](http://www.renyi.hu/~csiszar/Publications/Information_Theory_and_Statistics:_A_Tutorial.pdf)
+
+[^2]: [Goodfellow, I. (2016): "NIPS 2016 Tutorial: Generative Adversarial Networks". arXiv:1701.00160](https://arxiv.org/abs/1701.00160)
+
+[^3]: [Doersch, C. (2016): "Tutorial on Variational Autoencoders". arXiv:1606.05908](https://arxiv.org/abs/1606.05908)
+
+[^4]: [Arjovsky, M., Chintala, S., & Bottou, L. (2017): "Wasserstein GAN". arXiv:1701.07875](https://arxiv.org/abs/1701.07875)
+
+[^5]: [Bellemare, M. G., Danihelka, I., Dabney, W., et al. (2017): "The Cramer Distance as a Solution to Biased Wasserstein Gradients" arXiv:1705.1074](https://arxiv.org/abs/1705.10743)

@@ -4,13 +4,13 @@ title: Neural network-based clothing classifier
 author: Ricardo Faúndez-Carrasco
 ---
 
-Many Deep Learning-oriented libraries have been released in the last years, up to the point of having literally too many frameworks to work with: *Caffe*, *Theano*, *Tensorflow* and *Pytorch* among others. I've worked mostly with the last two, but I shall constrain myself to *Pytorch* in this post to solve a classification task released few days ago: the [fashion-MNIST dataset](https://github.com/zalandoresearch/fashion-mnist/blob/master/README.md) (find the original paper introducing it [here](https://arxiv.org/abs/1708.07747v1?utm_campaign=Artificial%2BIntelligence%2Band%2BDeep%2BLearning%2BWeekly&utm_medium=email&utm_source=Artificial_Intelligence_and_Deep_Learning_Weekly_28)). The aim of this post is to run a series of experiments on pattern classification using neural networks, studying along the way the importance of the number of layers or how the number of neurons in the hidden layers affects the performance of the net. In the end, we seek to compare the accuracy of our classifiers with respect to the official results already published.
+Many Deep Learning-oriented libraries have been released in the last years, up to the point of having literally too many frameworks to work with: *Caffe*, *Theano*, *Tensorflow* and *Pytorch* among others. I've worked mostly with the last two, but I shall constrain myself to *Pytorch* in this post to solve a classification task released few days ago: the [fashion-MNIST dataset](https://github.com/zalandoresearch/fashion-mnist/blob/master/README.md) (a published paper is also available, explaining the dataset in detail [^1]). The aim of this post is to run a series of experiments on pattern classification using neural networks, studying along the way the importance of the number of layers or how the number of neurons in the hidden layers affects the performance of the net. In the end, we seek to compare the accuracy of our classifiers with respect to the official results already published.
 
 # What the data are
 
 So far, in any AI-related problem the first task is to understand the data that will feed the learning system. Otherwise, we might well be missing relevant features of the input data that as a rule lead to a better performance of the overall system.
 
-In this post I shall work on the recently released (August $$28^{th}$$, $$2017$$) [**Fashion-MNIST dataset**](https://github.com/zalandoresearch/fashion-mnist): a set of images where each one is a $$28$$x$$28$$-pixels grayscale picture of a given piece of clothing from [Zalando](https://jobs.zalando.com/tech/)'s article images, resembling the well-known original [MNIST dataset](http://yann.lecun.com/exdb/mnist/). Let's take a look at some of these images.
+In this post I shall work on the recently released (August $$28^{th}$$, $$2017$$) [**Fashion-MNIST dataset**](https://github.com/zalandoresearch/fashion-mnist): a set of images where each one is a $$28$$x$$28$$-pixels grayscale picture of a given piece of clothing from [Zalando](https://jobs.zalando.com/tech/)'s article images, resembling the well-known original [MNIST dataset](http://yann.lecun.com/exdb/mnist/) [^2]. Let's take a look at some of these images.
 
 ![fashion-mnist samples view](/images/fashion-MNIST/fashion-mnist-sprite.png)
 
@@ -59,8 +59,8 @@ $$ \tanh(\mathbf{x}) = \frac{\sinh(\mathbf{x})}{\cosh(\mathbf{x})} = \frac{\exp(
 
 These few lines of code contain the information regarding the neural net's architecture. Furthermore, we ought to state what the training method is.
 
-* `criterion = nn.CrossEntropyLoss()` -- An usual cost function used in classification tasks is the [*Cross Entropy*](http://neuralnetworksanddeeplearning.com/chap3.html).
-* `optimizer = torch.optim.SGD(self.parameters(), lr = lr)` -- Indicates that the training algorithm is [*Stochastic Gradient Descent*](http://leon.bottou.org/publications/pdf/compstat-2010.pdf), and that we are going to use a fixed, non-decaying learning rate $$lr$$. 
+* `criterion = nn.CrossEntropyLoss()` -- An usual cost function used in classification tasks is the *Cross Entropy* [^3].
+* `optimizer = torch.optim.SGD(self.parameters(), lr = lr)` -- Indicates that the training algorithm is *Stochastic Gradient Descent*[^4], and that we are going to use a fixed, non-decaying learning rate $$lr$$. 
 
 For those experienced in neural networks, this architecture may seem extremely naïve, and I am aware of that. Nonetheless, this post is intended to be but a first approach to the problem, and I plan to further the quality and the depth of this study in upcoming experiments. 
 
@@ -126,3 +126,13 @@ Following there's a short list of issues we all should always keep in mind when 
 There's no much left I'd like to mention. As I explained in the beginning of the post, this is intended to be a merely introduction to the topic of pattern classification with neural networks. 
 
 Please leave any suggestion you may have in the comments below. Any idea is indeed welcome!
+
+# References
+
+[^1]:[Xiao, H., Rasul, K., & Vollgraf, R. (2017): "Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms". arXiv:1708.07747.](https://arxiv.org/abs/1708.07747v1?utm_campaign=Artificial%2BIntelligence%2Band%2BDeep%2BLearning%2BWeekly&utm_medium=email&utm_source=Artificial_Intelligence_and_Deep_Learning_Weekly_28)
+
+[^2]: [Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner. "Gradient-based learning applied to document recognition." Proceedings of the IEEE, 86(11):2278-2324, November 1998.](http://yann.lecun.com/exdb/publis/index.html#lecun-98)
+
+[^3]: [Michael A. Nielsen, "Neural Networks and Deep Learning", Determination Press, 2015.](http://neuralnetworksanddeeplearning.com/chap3.html)
+
+[^4]: [Léon Bottou: Large-Scale Machine Learning with Stochastic Gradient Descent, Proceedings of the 19th International Conference on Computational Statistics (COMPSTAT'2010), 177–187, Edited by Yves Lechevallier and Gilbert Saporta, Paris, France, August 2010, Springer.](http://leon.bottou.org/publications/pdf/compstat-2010.pdf)
