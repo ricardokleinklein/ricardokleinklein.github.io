@@ -25,7 +25,7 @@ This section is intended to be an introduction to those less familiar with the s
 
 ## BLEU score in NMT
 
-It would be crazy to check our automatic translation models using human translators, not only because of the time that would require, but because it wouldn't make any sense. It is reasonable then to find some sort of measure that automatically can evaluate the goodness of our translations. Amidst the sea of such measures, the BLEU score[^6] has become the most widely used one, for it shows a high correlationwith human judgement, and is relatively cheap to compute. The intuition behind is to compare human-generated translations (which are available, since they will be the labels of the translator), with the computer-generated ones. Comparing sequences of words, denoted as [*n-grams*](https://en.wikipedia.org/wiki/N-gram) present in both translations, the closer the artificial one is (ideally absolutely equal) to the human-generated one, the better the translation is. This measure yields a scalar number between $$0$$ and $$1$$, though it is usually regarded as its decimal part, with higher values representing better translations.
+It would be crazy to check our automatic translation models using human translators, not only because of the time that would require, but because it wouldn't make any sense. It is reasonable then to find some sort of measure that automatically can evaluate the goodness of our translations. Amidst the sea of such measures, the BLEU score[^6] has become the most widely used one, for it shows a high correlation with human judgement, and is relatively cheap to compute. The intuition behind is to compare human-generated translations (which are available, since they will be the labels of the translator), with the computer-generated ones. Comparing sequences of words, denoted as [*n-grams*](https://en.wikipedia.org/wiki/N-gram) present in both translations, the closer the artificial one is (ideally absolutely equal) to the human-generated one, the better the translation is. This measure yields a scalar number between $$0$$ and $$1$$, though it is usually regarded as its decimal part, with higher values representing better translations.
 
 ## Why attention and not CNNs or RNNs?
 
@@ -98,7 +98,7 @@ In this naïve approach to attention (naïve because we are not considering it i
 
 # The Transformer architecture
 
-Very much alike most NMT models, Transformer is based on an **encoder-decoder structure**[^9]. The difference between it and any other model is that Transformed is entirely based on attention mechanisms and point-wise, fully connected layers for both the encoder and the decoder. Both modules are thus cheaper in computational terms than any other competitor with similar test scores.
+Very much alike most NMT models, Transformer is based on an **encoder-decoder structure**[^9]. The difference between it and any other model is that Transformer is entirely based on attention mechanisms and point-wise, fully connected layers for both the encoder and the decoder. Both modules are thus cheaper in computational terms than any other competitor with similar test scores.
 
 Next is a figure from the paper, showing the whole model. We'll go through it piece by piece.
 
@@ -112,7 +112,7 @@ Following this procedure, we have passed from text to a tokenized version of the
 
 ## 2. Positional encodings
 
-Introduced for the first time by Gehling *et al.*[^8], it's a way to deal with sequential data when not recurrency or temporal information is available due to the lack of RNNs or CNNs.
+Introduced for the first time by Gehring *et al.*[^8], it's a way to deal with sequential data when not recurrency or temporal information is available due to the lack of RNNs or CNNs.
 
 Let's say that the raw input sequence can be described as $$\mathbf{x} = (x_1, x_2, \cdots, x_m)$$, and that it's converted into an embedded representation $$\textbf{w} = (w_1, w_2, \cdots, w_m)$$ with $$w_j \in \mathbb{R}^f$$. Each $$w_j$$ is a column vector of the matrix embedding belonging to the space $$\mathbb{R}^{V\times f}$$, with $$V$$ the number of embeddings and $$f$$ the number of features of each embedding.
 
@@ -214,7 +214,7 @@ The decoder resembles the encoder but for a detail. Althought it is also a stack
 
 This masking hides those features that belong to future states of the sequence (notice it is a *self-attention* layer!). With this trick, we are making the model **autoregressive and causal**, so $$p(o_t) = p(o_t \mid o_1, o_2, \cdots, o_{t-1})$$ with $$o_i$$ denoting the output (generated translation). The generation of the current state is then not conditioned in any way by future states.
 
-It is implemented setting to $$-\infty$$ the values corresponding to the forbidden states in the softmax layer of the dot-product attention modules. Thus, it is different than other causal convolutions such as the ones exhibited by Wavenet[^16] or SampleRNN model[^17].
+It is implemented setting to $$-\infty$$ the values corresponding to the forbidden states in the softmax layer of the dot-product attention modules. Thus, it is different than other causal convolutions such as the ones exhibited by *Wavenet*[^16] or *SampleRNN*[^17].
 
 # Results published in the paper
 
@@ -231,15 +231,32 @@ $$
 lr = d^{-0.5}_{\text{model}} \cdot \min(\text{step_num}^{-0.5}, \text{step_num} \cdot \text{warmup_steps}^{-1.5})
 $$
 
-* Regularization techniques were used: residual dropout[^20], attention dropout[^21] and label smoothing[^22].
+* Regularization techniques were used: residual dropout[^20], attention dropout[^1] and label smoothing[^21].
 
 The model was trained during $$300000$$ steps, roughly $$3.5$$ days, using $$8$$ NVIDIA P$$100$$ GPUs.
 
-## Our results with tensor2tensor
+With these hyperparameters, the Transformer model achieved a BLUE score of $$26.4$$ when applied over the [*newstet2013*](http://www.statmt.org/europarl/) dataset as a test set, **which set a new state-of-the-art**. Using the available open source repository [*tensor2tensor*](https://github.com/tensorflow/tensor2tensor), written in Tensorflow[^18] and including the full model and data used to train it, I ran my own experiment, though using fewer iterations and a smaller batch size. I trained it using one GPU NVIDIA Tesla P$$80$$ during $$2.5$$ days over the same training dataset (you can see the difference in the training with regards to the paper's), and I obtained a BLEU score of $$12.4$$ when using it over the same test data. It's not a great result, and it's far from being a state-of-the-art result, but definitely does great considering the training it has received!
 
-In order to gain a deeper understanding of the model, we have tried to reproduce the results shown in the paper when using the WMT 2014 English-to-German dataset. The code required is freely available within the [*tensor2tensor*](https://github.com/tensorflow/tensor2tensor) library, written in [Tensorflow](https://www.tensorflow.org/)[^18] and quite friendly to use, though at the moment of writing this post lacks some more documentation.
+Another advantage of attention layers against CNNs or RNNs, authors claim, is the intuition it can provide, and in fact it is quite easy to plot some interesting relationship that arise during training between English sequences, as shown below.
+
+![Relationships observed in attention](/images/attention/relationships.png){: .center-image }
+
+The picture shows some relationships present in two different heads from the layer encoder self-attention at layer $$5$$ of $$6$$. It can be seen, from the intensity of the links between words, that each of the heads has learned to perform a different task. But hey, you can see they're doing great in detecting long-term dependencies!
 
 # Conclusion
+
+This work is interesting because it replaces entirely the recurrent or convolutional layerls, using attention and fully-connected layers instead. For translation tasks, it set the new state-of-the-art benchmark, and offers a solid ground that suggest that the future of many architectures in Deep Learning will shift towards attention mechanisms. 
+
+Although there are others architectures that make use of attention layers, none achieves so good results so fast. Not only that, but the only model that can compite against Transformer is the *Slicenet*[^22], proposed just fifteen days before. **It takes much longer to train, due to the huge amount of parameters it requires** ($$348$$ million against the $$213$$ millions of Transformer), and the BLEU scores it achieves are slightly worse on average. In short, up to date it offers no profit over Transformer.
+
+Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That's the main idea to overcome in a recent paper by researchers at [*Salesforce Research*](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[^23]. Their proposal is to compute *fertilities* for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
+
+![Fertilities over Transformer model](/images/attention/fertilities.png){: .center-image }
+
+As you can see, the "relevance" of the input words is modelled, and then then those that are more important are copied a number of times dependent on their importance as a guessing that provides sort of the information Transformer does by its self-attention in the decoder. The results are not state-of-the-art. The only advantage (it's true), is the **possibility of compute all the output sequence at once, with just a small worsening in performance** (they report on having just $$2$$ points less in BLEU scoring over the same dataset than Transformer. In my opinion, those two features make it indeed suitable for more bussiness, real-world applications. 
+
+The paper covered here could give rise to a whole book. I've tried my best to cover all the different components of the model, but sure every reader will miss something. That's why I encourage you to comment below and help me improve this post!
+
 
 # References
 
@@ -284,3 +301,7 @@ In order to gain a deeper understanding of the model, we have tried to reproduce
 [^20]: [Srivastava et al. (2014): "Dropout: a simple way to prevent neural networks from overfitting". Journal of Machine Learning Research, 15(1): 1929-1958, 2014.](http://jmlr.org/papers/v15/srivastava14a.html)
 
 [^21]: [Szegedy et al. (2015): "Rethinking the inception architecture for computer vision". CoRR, abs/1512.00567, 2015.](https://arxiv.org/abs/1512.00567)
+
+[^22]: [Kaiser, L., Gomez, A.N. and Chollet, F. (2017): "Depthwise Separable Convolutions for neural machine translation". arXiv:1706.03059v2](https://arxiv.org/abs/1706.03059)
+
+[^23]: [Gu et al. (2017): "Non-autoregressive neural machine translation". arXiv:1711.02281](https://arxiv.org/abs/1711.02281)
