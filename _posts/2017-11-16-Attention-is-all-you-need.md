@@ -192,15 +192,15 @@ $$
 with $$H$$ the number of units in the $$l$$-th layer. The values of the outputs of the layer, $$\mathbf{h}^l$$, are then converted by the following rule:
 
 $$
-\mathbf{h}^l = f \left[ \frac{\matbf{g}{\sigma^l} \odot(\mathbf{a}^l-\mu^l)+\mathbf{b} \right]
+\mathbf{h}^l = f \left[ \frac{\mathbf{g}}{\sigma^l} \odot (\mathbf{a}^l - \mu^l) + \mathbf{b} \right]
 $$
 
-where $$\mathbf{g}$$ and $$\mathbf{b}$$ are known as the gain and the bias parameters, and must be learned during training time.
+which is a function of the parameters above, and the elements $$\mathbf{g}$$ and $$\mathbf{b}$$, known as the gain and the bias parameters, and must be learned during training time.
 
 Advantages of this approach against other strategies are that:
 * Layer normalization does not impose any constraint in the batch size.
 * It can be applied easily to CNNs and fully-connected networks, and requires just a little tuning for RNNs, making it suitable for every architecture studied until now.
-* It is extremely fast to compute.
+* It is extremely fast to compute, particularly when $$f$$ is the identity function as in the paper.
 
 ### D) Position-wise Fully-connected feed-forward nets
 
