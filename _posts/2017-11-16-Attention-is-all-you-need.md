@@ -189,7 +189,15 @@ $$
 \sigma^l = \sqrt{\frac{1}{H} \sum^H_{i=1}(a_i^l - \mu^l)^2}
 $$
 
-with $$H$$ the number of units in the $$l$$-th layer. Advantages of this approach against other strategies are that:
+with $$H$$ the number of units in the $$l$$-th layer. The values of the outputs of the layer, $$\mathbf{h}^l$$, are then converted by the following rule:
+
+$$
+\mathbf{h}^l = f\left[ \frac{\matbf{g}{\sigma^l}\circ(\mathbf{a}^l-\mu^l)+\mathbf{b}\right]
+$$
+
+where $$\mathbf{g}$$ and $$\mathbf{b}$$ are known as the gain and the bias parameters, and must be learned during training time.
+
+Advantages of this approach against other strategies are that:
 * Layer normalization does not impose any constraint in the batch size.
 * It can be applied easily to CNNs and fully-connected networks, and requires just a little tuning for RNNs, making it suitable for every architecture studied until now.
 * It is extremely fast to compute.
