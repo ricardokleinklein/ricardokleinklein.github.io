@@ -192,7 +192,7 @@ $$
 with $$H$$ the number of units in the $$l$$-th layer. The values of the outputs of the layer, $$\mathbf{h}^l$$, are then converted by the following rule:
 
 $$
-\mathbf{h}^l = f\left[ \frac{\matbf{g}{\sigma^l}\circ(\mathbf{a}^l-\mu^l)+\mathbf{b}\right]
+\mathbf{h}^l = f \left[ \frac{\matbf{g}{\sigma^l} \odot(\mathbf{a}^l-\mu^l)+\mathbf{b} \right]
 $$
 
 where $$\mathbf{g}$$ and $$\mathbf{b}$$ are known as the gain and the bias parameters, and must be learned during training time.
