@@ -10,6 +10,7 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 # Formal education
 
 * **MSc. in Computational and Mathematical Engineering** *(2016 -- 2018)* -- Universitat Oberta of Catalunya & Universitat Rovira i Virgili
+	- Thesis on Artificial Intelligence methods applied to breast cancer survavility.
 * **MSc. in Automation and Robotics** *(2015 -- 2017)* -- Technical University of Madrid
 	- Thesis: *Deep Learning strategies for the enhancement of Automatic Speech Recognition Architectures* -- Grade: 10/10
 * **Bachelor in Physics** *(2010 -- 2015)* -- Universidad Autónoma de Madrid
