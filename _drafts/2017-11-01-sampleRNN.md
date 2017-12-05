@@ -10,6 +10,7 @@ One of the latest models to make a public appearance is [SampleRNN](https://arxi
 
 This blog is not intended to be exclusively about speech-related technologies, so many readers may have little or no idea about which are the state of the art models and their working principles. Therefore, we should start with a brief introduction to Speech Synthesis, reviewing the main strategies used until very recently. 
 
+
 # How is an artificial speech built
 
 # A little survey on RNNs
