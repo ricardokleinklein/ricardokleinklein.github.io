@@ -10,7 +10,7 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 # Formal education
 
 * **MSc. in Computational and Mathematical Engineering** *(2016 -- 2018)* -- Universitat Oberta of Catalunya & Universitat Rovira i Virgili
-	- Thesis on Artificial Intelligence methods applied to breast cancer survavility.
+	- Ongoing Thesis on Artificial Intelligence methods applied to breast cancer survavility.
 * **MSc. in Automation and Robotics** *(2015 -- 2017)* -- Technical University of Madrid
 	- Thesis: *Deep Learning strategies for the enhancement of Automatic Speech Recognition Architectures* -- Grade: 10/10
 * **Bachelor in Physics** *(2010 -- 2015)* -- Universidad Autónoma de Madrid
@@ -19,19 +19,25 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 # Main roles
 
 * **Research Intern** at *National Institute of Informatics (NII)* in Tokyo -- From October 2017 to April 2018.
+	- Development from scratch of novel Deep Learning multi-task architectures: systems capable of performing several different tasks at the same time.
+	- Tasks: Speech Enhancement and Voice Conversion (soon also Text-to-Speech).
 
 * **Co-founder** at *Proyecto Nautilus* -- From January 2017 to now.
-	- Framed within the *ActúaUPM XIV* start-up competition, hosted by the Technical University of Madrid.
+	- *Now looking for investors.*
+	- Originated within the *ActúaUPM XIV* start-up competition, hosted by the Technical University of Madrid.
 	- Ranked in the Top 50 bussiness ideas among more than 500 competitors.
 	- Machine Learning and enhanced user experience for educational purposes.
+
 * **Research Intern** at *Technical University of Madrid - Speech Technology Group* -- From February to July 2017.
 	- Development of Deep Learning Architectures for the improvement of Speech Recognition Systems.
 	- Worked on DNNs, TDNNs and LSTMs networks for acoustic and language modeling.
 	- Experience with word embeddings as dense representations of the words.
+
 * **Research & Development** at *Medicsen* -- From September 2015 to September 2016.
 	- Built a mathematical and computational Machine Learning model capable of foreseeing a patient's glycemic level 2 hours ahead with a state-of-the-art accuracy.
 	- Integration of multiple wearables, sensors and cloud computing devices and services.
 	- Co-speaker at *Deep Learning in Healthcare Summit 2016* in London.
+
 * **Intern** at *La Paz Hospital* -- From March to July 2015.
 	- Worked on Radiotherapy and Nuclear Medicine Departments.
 	- Statistically-driven models for cancer treatment and diagnosis.
