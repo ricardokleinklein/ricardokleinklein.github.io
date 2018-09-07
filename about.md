@@ -10,23 +10,25 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 # Formal education
 
 * **MSc. in Computational and Mathematical Engineering** *(2016 -- 2018)* -- Universitat Oberta of Catalunya & Universitat Rovira i Virgili
-	- Ongoing Thesis on Artificial Intelligence methods applied to breast cancer survavility.
+	- Thesis: *Stage-specific Breast Cancer Survivability Models Over Time* -- Grade 10/10
 * **MSc. in Automation and Robotics** *(2015 -- 2017)* -- Technical University of Madrid
-	- Thesis: *Deep Learning strategies for the enhancement of Automatic Speech Recognition Architectures* -- Grade: 10/10
+	- Thesis: *Deep Learning Strategies For The Enhancement Of Automatic Speech Recognition Architectures* -- Grade: 10/10
 * **Bachelor in Physics** *(2010 -- 2015)* -- Universidad Autónoma de Madrid
 	- Thesis: *Isotropic-Nematic-Liquid crystal phase transition: A lattice model* -- Grade: 8.8/10
 
 # Main roles
 
 * **Research Intern** at *National Institute of Informatics (NII)* in Tokyo -- From October 2017 to April 2018.
-	- Development from scratch of novel Deep Learning multi-task architectures: systems capable of performing several different tasks at the same time.
-	- Tasks: Speech Enhancement and Voice Conversion (soon also Text-to-Speech).
+	- Development from scratch of novel Deep Learning multi-domain architectures: systems capable of performing several different tasks at the same time.
+	- Tasks: Speech Enhancement and Voice Conversion (soon also Text-to-Speech and Lips reading).
+	- Domains: Audio signal, Image based on audio features, Text, Video.
 
-* **Co-founder** at *Proyecto Nautilus* -- From January 2017 to now.
+* **Co-founder** at *DARE* -- From January 2017 to now.
 	- *Now looking for investors.*
 	- Originated within the *ActúaUPM XIV* start-up competition, hosted by the Technical University of Madrid.
 	- Ranked in the Top 50 bussiness ideas among more than 500 competitors.
-	- Machine Learning and enhanced user experience for educational purposes.
+	- Finalist in *Yuzz Explorer* program hosted by Banco Santander.
+	- Augmented Reality and enhancede user experience for educational purposes.
 
 * **Research Intern** at *Technical University of Madrid - Speech Technology Group* -- From February to July 2017.
 	- Development of Deep Learning Architectures for the improvement of Speech Recognition Systems.
@@ -44,10 +46,10 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 
 # Skills
 
-* **Languages** -- Spanish (`Native`) / English (`C1`) / Japanese (`N5`) / French (`B1`)
+* **Languages** -- Spanish (`Native`) / English (`C1`) / Japanese (`N5`)
 * **Programming Languages** -- Python / C/C++ / R / Java / Matlab & Simulink
 * **Speech Processing and NLP-related** -- HTK / Kaldi / HTS
-* **Machine & Deep Learning** -- Tensorflow / Keras / Pytorch / Theano / DEAP / scikit-learn
+* **Machine & Deep Learning** -- Tensorflow / Pytorch / DEAP / scikit-learn / Weka / nipy
 
 <br>
 
