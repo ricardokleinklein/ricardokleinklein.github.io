@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Attention is all you need's review
-author: Ricardo Faúndez-Carrasco
+author: Ricardo Kleinlein
 ---
 
 The mechanisms that allow computers to perform automatic translations between human languages (such as [Google Translate](https://translate.google.com/?hl=es&tab=TT)) are known under the flag of **Machine Translation** (MT), with most of the current such systems being based on **Neural Networks**, so these models end up under the tag of **Neural Machine Translation**, or *NMT*. The state-of-the-art results are obtained using the most advanced class of neural networks known, which lay under the umbrella of Deep Learning. In this context, researchers from *Google Brain* released a paper this very year showing a new mechanism that could be applied to the problem and that outperforms any other NMT model seen before [^1]. The aim of this post is to develop the ideas presented in this paper, explaning to a wider audience its results, why it is relevant not only in MNT, and last but not least, trying to make a little more accesible some of the most complex parts of the model.
@@ -39,7 +39,7 @@ First of all, you must keep in mind that attention mechanisms and structures suc
 
 That said, take a look at the diagram below, which shows the basic structure of an attention cell:
 
-![basic dot-attention mechanism](/images/attention/attention_dot_product.png){: .center-image }
+![basic dot-attention mechanism](/images/transformer/attention_dot_product.png){: .center-image }
 
 There's a lot of information in there:
 1. Blocks denoted by *A* denote the input sequence. As said, *A*s blocks can be connected in case we are using a RNN. In the general case, though, it is not a requirement. Blocks denoted by letter *B* are completely analogous, but represent the output sequence.
@@ -64,7 +64,7 @@ where $$i$$ stands for the $$i$$-th decoder's timestep and $$u$$ is the $$u$$-th
 
 When reading Google's papers including attention mechanism, you'll probably see diagrams like the following:
 
-![Google's attention diagram](/images/attention/google_dot_product.png){: .center-image }
+![Google's attention diagram](/images/transformer/google_dot_product.png){: .center-image }
 
 At first I didn't understand it, but if we consider that
 
@@ -102,7 +102,7 @@ Very much alike most NMT models, Transformer is based on an **encoder-decoder st
 
 Next is a figure from the paper, showing the whole model. We'll go through it piece by piece.
 
-![Transformer's architecture](/images/attention/transformer.png){: .center-image }
+![Transformer's architecture](/images/transformer/transformer.png){: .center-image }
 
 ## 1. Input -- Output
 
@@ -132,13 +132,13 @@ $$
 
 with $$d_{model} = 512$$, the size of the embeddings, and the dimensionality we are going to work with all along the model. $$pos$$ represents a word within the whole sentence, and $$i$$ denotes each feature. The figure below is a crude visualization of the $$PE$$ values that are added to the original input embeddings across a set of words. 
 
-![Sinusoidal positional encodings](/images/attention/positional_encodings.png){: .center-image }
+![Sinusoidal positional encodings](/images/transformer/positional_encodings.png){: .center-image }
 
 As can be seen, the frequency of the sinusoidal signals changes across the dimensions, so feature $$i=1$$ has a smaller period than $$i=204$$. This is the only mention to any sequential structure in the data fed to Transformer.
 
 ## 3. Encoder
 
-![Transformer's encoder](/images/attention/encoder.png){: .center-image }
+![Transformer's encoder](/images/transformer/encoder.png){: .center-image }
 
 The encoder is made up of a stack of $$N=6$$ layers, with each of them being composed of two sub-layers: a *multi-head attention mechanism*[^1] and a *fully-connected feed forward net*[^10], plus *residual connections*[^11] on both stages, followed by a *layer normalization*[^12] procedure. Thus the output of every layer in the encoder can be expressed as:
 
@@ -153,7 +153,7 @@ $$
 
 Before we talked about attention mechanisms, but we are not done with the topic. In those architectures, a vector is processed into a subspace of fixed dimensions. What if we could jointly attend to information from different representation subspaces at different positions? That what multi-head attention does! Think of it as a dot-product attention compute by blocks, with each representation havinf a different size.
 
-![Multi-head attention mechanism](/images/attention/multi_head.png){: .center-image }
+![Multi-head attention mechanism](/images/transformer/multi_head.png){: .center-image }
 
 As you can see in the figure, after we compute normal dot-products using all the $$h$$ different representations we want, and the output of them all is concatenated and then projected again. In the present paper in particular, they took $$h=8$$, with all of them having a projection size of $$d_{model} / h = 64$$ elements. With this configuration, we overcome the averaging issue that rises when using uniquely dot-attention mechanisms, while keeping more or less the number of parameters constant.
 
@@ -173,7 +173,7 @@ The matrices $$W^Q_i \in \mathbb{R}^{d_{model}\times d_k}$$, $$W^K_i \in \mathbb
 
 Deep Learning models are difficult to train, and it gets more difficult the more layers there are. In order to deal with such issue, the idea of keeping an untouched copy of the data that is fed to upper layers looks appealing. **It works under the assumption that the function we are trying to model (the weights of the net) is closer to an identity mapping than to a zero mapping**, so perturbations on this modelling should be easier to detect when referencing to the identity.
 
-![Residual connection](/images/attention/residual.png){: .center-image }
+![Residual connection](/images/transformer/residual.png){: .center-image }
 
 Moreover, this sort of connections allow us to have way deeper models with barely any additional cost of computation. As a matter of fact, it has been observed that this idea works really well, so it's been an increasing number of papers devoted to it, such as *Wide Residual Networks* from Université Paris-Est and École des Ponts ParisTech[^14], or FAIR's *ResNeXt*[^15]. 
 
@@ -214,7 +214,7 @@ The interesting thing with this module is that it is applied position-wise to th
 
 ## 4. Decoder
 
-![Transformer's decoder](/images/attention/decoder.png){: .center-image }
+![Transformer's decoder](/images/transformer/decoder.png){: .center-image }
 
 The decoder resembles the encoder but for a detail. Althought it is also a stack of $$6$$ layers with sub-layers within them, there are $$3$$ of them instead of two: *multi-head attention*, *fully-connected layers* and *masked multi-head attention* (apart from the common *residual connections* and *layer normalization*).
 
@@ -247,7 +247,7 @@ With these hyperparameters, the Transformer model achieved a BLUE score of $$26.
 
 Another advantage of attention layers against CNNs or RNNs, authors claim, is the intuition it can provide, and in fact it is quite easy to plot some interesting relationship that arise during training between English sequences, as shown below.
 
-![Relationships observed in attention](/images/attention/relationships.png){: .center-image }
+![Relationships observed in attention](/images/transformer/relationships.png){: .center-image }
 
 The picture shows some relationships present in two different heads from the layer encoder self-attention at layer $$5$$ of $$6$$. It can be seen, from the intensity of the links between words, that each of the heads has learned to perform a different task. But hey, you can see they're doing great in detecting long-term dependencies!
 
@@ -259,7 +259,7 @@ Although there are others architectures that make use of attention layers, none 
 
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That's the main idea to overcome in a recent paper by researchers at [*Salesforce Research*](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[^23]. Their proposal is to compute *fertilities* for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 
-![Fertilities over Transformer model](/images/attention/fertilities.png){: .center-image }
+![Fertilities over Transformer model](/images/transformer/fertilities.png){: .center-image }
 
 As you can see, the "relevance" of the input words is modelled, and then then those that are more important are copied a number of times dependent on their importance as a guessing that provides sort of the information Transformer does by its self-attention in the decoder. The results are not state-of-the-art. The only advantage (it's true), is the **possibility of compute all the output sequence at once, with just a small worsening in performance** (they report on having just $$2$$ points less in BLEU scoring over the same dataset than Transformer. In my opinion, those two features make it indeed suitable for more bussiness, real-world applications. 
 

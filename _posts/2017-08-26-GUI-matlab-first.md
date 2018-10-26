@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Easy GUI design in Matlab (I)
-author: Ricardo Faúndez-Carrasco
+title: Easy GUI design in Matlab
+author: Ricardo Kleinlein
 ---
 
 When you make a click on your computer, when you type something in a text editor, when you scroll down using a slidebar... Everytime you do that, you are interacting with computer programmes by means of a Graphical User Interface (GUI). 

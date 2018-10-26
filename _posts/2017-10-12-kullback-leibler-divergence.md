@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Understanding the Kullback-Leibler Divergence
-author: Ricardo Faundez-Carrasco
+author: Ricardo Kleinlein
 ---
 
 Reality is usually far more complex than the models we use to describe it. This means that whenever we make use of a model, unless it is exactly the same as the original system, there will be a net loss of information, meaning that the model will contain less information and will not perfectly reflect all the features and/or properties that it should. Obviously, we would like this loss of information to be as small as possible.

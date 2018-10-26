@@ -9,6 +9,8 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 
 # Formal education
 
+* **Ph.D. Student** *(2018 -- ????)* -- Technical University of Madrid
+	- Focus on multimodal and multidomain deep neural network models.
 * **MSc. in Computational and Mathematical Engineering** *(2016 -- 2018)* -- Universitat Oberta of Catalunya & Universitat Rovira i Virgili
 	- Thesis: *Stage-specific Breast Cancer Survivability Models Over Time* -- Grade 10/10
 * **MSc. in Automation and Robotics** *(2015 -- 2017)* -- Technical University of Madrid
@@ -23,7 +25,7 @@ Nice to meet you! As a rule I ask anyone who wants to meet me to have a beer tog
 	- Tasks: Speech Enhancement and Voice Conversion (soon also Text-to-Speech and Lips reading).
 	- Domains: Audio signal, Image based on audio features, Text, Video.
 
-* **Co-founder** at *DARE* -- From January 2017 to now.
+* **Co-founder** at *DARE* -- From January 2017 to September 2018.
 	- *Now looking for investors.*
 	- Originated within the *ActúaUPM XIV* start-up competition, hosted by the Technical University of Madrid.
 	- Ranked in the Top 50 bussiness ideas among more than 500 competitors.
