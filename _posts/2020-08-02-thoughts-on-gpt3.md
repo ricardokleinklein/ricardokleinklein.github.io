@@ -1,5 +1,5 @@
 ---
-title: Human-written thoughts on the GPT-3 paper
+title: (Huge) Language Models are Few-Shot Learners
 author: Ricardo Kleinlein
 layout: post
 ---
