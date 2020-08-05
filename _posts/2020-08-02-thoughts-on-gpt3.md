@@ -10,7 +10,7 @@ Given that for the last weeks there's been a great fuss around the excellent, re
 
 ![Results of synthesized news detection by humans](/images/gpt3/results_news.png){: .center-image }
 
-GPT-3 is but a [Language Model](https://machinelearningmastery.com/statistical-language-modeling-and-neural-language-models/) (LM), a fundamental component in any Natural Language Processing (NLP) system. A language model predicts the probability that a given word will appear next in a text. Its prediction is usually inferred from its context, which usually is a sequence of previous words. But GPT-3 does not only predict words: it fills gaps in a paragraph, answers general knowledge questions, can perform simple mathematical operations, and much more!
+GPT-3 is but a **[Language Model](https://machinelearningmastery.com/statistical-language-modeling-and-neural-language-models/)** (LM), a fundamental component in any Natural Language Processing (NLP) system. **A language model predicts the probability that a given word will appear next in a text**. Its prediction is usually inferred from its context, which usually is a sequence of previous words. But GPT-3 does not only predict words: it fills gaps in a paragraph, answers general knowledge questions, can perform simple mathematical operations, and much more!
 
 ![Autoregressive and bidirectional model's diagram](/images/gpt3/autoregressive.png){: .center-image }
 
@@ -36,7 +36,7 @@ These sort of general-objective, pre-trained language models are becoming the ru
 
 # Nothing's free
 
-The results shown in the paper are to be liked. The answer samples, even considering the cherry-picking, are impressive. Yet the bad news is, size matters, and the system prompts are often unrealistic or simply wrong. Only the largest version of GPT-3 is able to successfully deliver, and at a prohibitive expense of resources and time, far from the usual capacity of average IT departments or even most research labs, who would get similar results with smaller models. It seems a shared impression among researchers is that “GPT-3 often performs like a clever student who hasn't done their reading trying to bullshit their way through an exam. Some well-known facts, some half-truths, and some straight lies, strung together in what first looks like a smooth narrative.” says Julian Togelius, associate professor of Computer Science and Engineering at the New York University.
+The results shown in the paper are to be liked. The answer samples, even considering the cherry-picking, are impressive. Yet the bad news is, size matters, and the system prompts are often unrealistic or simply wrong. Only the largest version of GPT-3 is able to successfully deliver, and at a prohibitive expense of resources and time, far from the usual capacity of average IT departments or even most research labs, who would get similar results with smaller models. It seems a shared impression among researchers is that *“GPT-3 often performs like a clever student who hasn't done their reading trying to bullshit their way through an exam. Some well-known facts, some half-truths, and some straight lies, strung together in what first looks like a smooth narrative.”* says Julian Togelius, associate professor of Computer Science and Engineering at the New York University.
 
 The path the authors suggest to reduce the model size, distillation [^5], doesn't look like a promising path to downscale models like this. At least if we really want to overcome current problems such as the addition of words out of vocabulary. There's an increasing concern within the community that in this race to get the biggest model, we are forgetting other possible approaches to Artificial Intelligence. 
 
@@ -44,9 +44,9 @@ The paper shows some responses from the system being fed inexistent words contex
 
 ![New words fed as input for text synthesis to GPT-3. extracted from the original paper.](/images/gpt3/new_words.png){: .center-image }
 
-The answers are sensible, that's true. Something comes to my mind, though; how would the model respond to poorer descriptions? Or to words without further explanations? It seems that GPT-3 is approximating any incoming unknown word to the context it is surrounded with. However, humans do not always understand a new word at first. And that's fine. Sometimes, asking for further information can greatly leverage the conversation. It is truly amazing GPT-3 can learn to write convincingly about unreal or unseen entities, yet that is precisely its Achilles' heel: GPT-3 will write about anything you ask it for. Literally anything. This issue represents a drawback that needs to be investigaded if we want to use GPT-3 or similar models in real-time, interactive scenarios, where typos or other mistakes are common, not to mention new words. In such cases, I have the feeling that too often the model would forget about the final goal to focus on speaking of the unknown word instead.
+The answers are sensible, that's true. Something comes to my mind, though; how would the model respond to poorer descriptions? Or to words without further explanations? It seems that GPT-3 is approximating any incoming unknown word to the context it is surrounded with. However, humans do not always understand a new word at first. And that's fine. Sometimes, asking for further information can greatly leverage the conversation. It is truly amazing GPT-3 can learn to write convincingly about unreal or unseen entities, yet that is precisely its Achilles' heel: GPT-3 will write about anything you ask it for. Literally anything. This issue represents a drawback that needs to be investigated if we want to use GPT-3 or similar models in real-time, interactive scenarios, where typos or other mistakes are common, not to mention new words. In such cases, I have the feeling that too often the model would forget about the final goal to focus on speaking of the unknown word instead.
 
-Therefore, I would love to see experiments regarding how GPT-3 processes invented words with shorter contexts, or how it deals with words Out-Of-Vocabulary [^6].
+Therefore, I would love to see experiments regarding how GPT-3 processes invented words with shorter contexts, or how it deals with Out-Of-Vocabulary words [^6].
 
 ## Also...
 
@@ -56,7 +56,7 @@ A line of research suggested by the authors is to expand the contextual learning
 
 ![Pure text against combined textual and visual information](/images/gpt3/ani.png){: .center-image }
 
-In spite of the text being quite specific about the location and main characteristics of Ani, it is totally unsufficient for our minds to build an accurate representation of it in our minds. Nonetheless, the moment you see the attached image, you make a far more realistic mental model of Ani right away. I am pretty sure that multimodality is the path to follow if we really want to design richer learning setups.
+In spite of the text being quite specific about the location and main characteristics of Ani, it is totally unsufficient to build an accurate representation of it in our minds. Nonetheless, the moment you see the attached image, you make a far more realistic mental model of Ani right away. I am pretty sure that multimodality is the path to follow if we really want to design richer learning setups.
 
 Last but not least, evaluating translation between languages with a radically different grammar (EN-CH for instance) or low-resource languages (languages with but a few samples to train on such as most African languages) would be a nice contribution, not only within academia but also with direct practical applications.
 
@@ -66,7 +66,7 @@ One great thing about neural networks is that they excel as pattern learners, no
 
 As a matter of fact, our brain does have different regions specialized in processing different sources of information, and that labor division allows us to efficiently go through our daily lives far more smoothly than if we had to continuously process in a conscious way our breath, digestion or heart rhythm, to name a few. [^9] But is GPT-3 doing that kind of "node clustering" learning? 
 
-We must bear in mind that only the largest GPT-3 was able to perform satisfactorily across experiments, and still it has a hard time trying to infer new problems such as basic mathematical operations and it is unclear how it would perform in some of the tasks suggested in these lines. Even though more research is needed to fully understand what is going on within GPT-3, it seems unlikely at this point that the path to more general intelligence will need bigger networks. 
+We must bear in mind that only the largest GPT-3 was able to perform satisfactorily across experiments, and still it has a tough time trying to infer new problems such as basic mathematical operations and it is unclear how it would perform in some of the tasks suggested in these lines. Even though more research is needed to fully understand what is going on within GPT-3, it seems unlikely at this point that the path to more general intelligence will need bigger networks. 
 
 ## At the end of the day...
 
