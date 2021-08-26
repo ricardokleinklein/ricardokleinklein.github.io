@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Thoughts and nonsenses from a physicist who decided to enroll into the path
   of Artificial Intelligence and Machine Learning.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://ricardokleinlein.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://ricardokleinklein.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 theme: minima
 paginate: 10
 
