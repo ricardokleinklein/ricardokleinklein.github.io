@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+	{% include meta.html %}
+
+	<body>
+		<nav class="nav">
+			<div class="nav-container">
+				<a href="{{ site.baseurl }}/">
+					<h2 class="nav-title">{{ site.name }}</h2>
+				</a>
+				<ul>
+					<li><a href="{{ site.baseurl }}/">Blog</a></li>
+					<li><a href="{{ '/about' | prepend: site.url }}">About</a></li>
+					<li><a href="{{ '/publications' | prepend: site.url }}">Publications</a></li>
+					<li><a href="{{ site.baseurl }}/resume.pdf" target="_blanck">CV</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<main>
+			{{ content }}
+		</main>
+
+		{% include footer.html %}
+    	{% include analytics.html %}
+
+	</body>
+</html>
