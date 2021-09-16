@@ -1,0 +1,133 @@
+// HTML tags
+
+* {
+	@include box-sizing;
+	line-height: $base-line-height;
+}
+
+html,
+body {
+	color: $black;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: $sans-font;
+	font-size: 16px;
+
+	@media (min-width: 600px) {
+		font-size: 12px;
+	}
+}
+
+body {
+	-webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $grey-bck;
+	font-family: $sans-font;
+	line-height: normal;
+}
+
+a {
+	color: $still-blue;
+	text-decoration: none;
+
+	&:hover {
+		color: $red-orange;
+	}
+}
+
+p {
+	color: $dark-grey;
+	font-size: 1rem;
+}
+
+blockquote {
+	// border-left: .5rem solid $spanish-grey;
+	// color: $spanish-grey;
+	// background-color: $clear-grey;
+	// margin-top: .8rem;
+	// margin-bottom: .8rem;
+	// margin-left: 1rem;
+
+	// p {
+	// 	font-size: 1rem;
+	// 	margin: 1rem;
+	// 	padding: 0.75rem;
+	// }
+
+	// p:last-child {
+	// 	margin-bottom: 0;
+	// }
+
+	// @media(min-width: 600px) {
+	// 	padding: 0 5rem 0 1.25rem;
+	// }
+}
+
+td {
+	vertical-align: top;
+}
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  margin: 1rem auto;
+  text-align: center;
+  display: block;
+}
+
+// -------------------------------------------------
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: 10px;
+  color: $spanish-grey;
+  padding-bottom: 10px;
+}
+
+// -------------------------------------------------
+
+/**
+ * Wrapper
+ */
+.wrapper {
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 1.25));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 1.25));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix;
+
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
+// -------------------------------------------------
+
+/**
+ * Clearfix
+ */
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+

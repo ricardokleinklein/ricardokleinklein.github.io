@@ -1,19 +1,53 @@
-$default-color: #555;
-$default-shade: #353535;
-$default-tint: #aaa;
-$grey-1: #979797;
-$grey-2: #e5e5e5;
-$grey-3: #696969;
+// Colors
+// Hex format
+$light-salmon: #ffa07a;
+$red-orange: #ff4500;
+$still-blue: #31639c;
 $white: #fff;
-$blue: #4a9ae1;
-$shadow-color: rgba(0, 0, 0, .2);
-
-$baskerville: 'Libre Baskerville', 'Times New Roman', Times, serif;
-$palatino: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
-$sans-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-$monospaced-font: Menlo, Monaco, monospace;
+$black: #010101;
+$light-grey: #aaa;
+$spanish-grey: #989898;
+$grey-bck: #111;
 $code-color: #bf616a;
+
+// rgba format
+$shadow-grey: rgba(0, 0, 0, 0.35);
+$clear-grey: rgba(219, 218, 214, 0.45);
+$ultraclear-grey: rgba(230, 230, 230, 0.75);
+$dark-grey: rgba(37, 34, 30, 0.85);
+$light-shadow: rgba(0, 0, 0, 0.1);
+
+// -------------------------------------------------
+
+// Fonts
+// Font families
+$baskerville-font: 'Libre Baskerville', 'Times New Roman', Times, serif;
+$palatino-font: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+$sans-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$caveats-font: 'Caveat', cursive;
+$kaushan-font: 'Kaushan Script', cursive;
+$monospaced-font: Menlo, Monaco, monospace;
+
+// Font family calling to Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Kaushan+Script&display=swap');
+
+// Font format
+$base-font-size:   16px !default;
+$base-line-height: 1.85 !default;
+
+
+// -------------------------------------------------
+
+// Width of the content area
+$spacing-unit:     30px !default;
+$content-width:    800px !default;
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+// -------------------------------------------------
+
+// Functions
 
 @mixin box-sizing($type: border-box) {
   -webkit-box-sizing: $type;
@@ -27,4 +61,12 @@ $code-color: #bf616a;
           transition: $args;
 }
 
-$avatar: "/images/avatar.png";
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}

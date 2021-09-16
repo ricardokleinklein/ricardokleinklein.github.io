@@ -1,20 +1,21 @@
 <head>
+	<!-- TODO: Include collection of tags -->
 	<meta charset="utf-8">
-	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
-		{% if page.title == "Home" %}
-			{{ page.title }} &ndash; {{ site.alias }}
+		{% if page.title %}
+			{{ page.title | escape }}
 		{% else %}
-			{{ page.title }} &ndash; {{ site.alias }}
+			{{ site.title | escape }}
 		{% endif %}
 	</title>
 
-	<!-- CSS properties -->
-	
+	<link rel="shortcut icon" href="{{ '/assets/images/idea.png' |relative_url }}">
 	<link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-	<link rel="shortcut icon" type="image/png" href=" {{ site.baseurl }}/images/favicon.png">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+	<!-- Equations support -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 </head>

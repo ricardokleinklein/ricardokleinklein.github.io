@@ -1,47 +1,49 @@
 .catalogue {
-  &-item {
-    border-bottom: 1px solid $grey-2;
-    color: $default-color;
-    display: inline-block;
-    padding: 1rem 0;
-    font-size: 1rem;
-    font-family: $baskerville;
-    color: $grey-3;
 
+	&-time {
+		color: $spanish-grey;
+		font-family: $monospaced-font;
+		font-size: 1.35rem;
+		line-height: 1.15rem;
+	}
+
+	&-title {
+		color: $dark-grey;
+		font-family: $sans-font;
+		font-size: 2.15rem;
+		font-weight: 700;
+		margin-top: .5rem;
+		margin-bottom: 0.75rem;
+		display: block;
+
+		&:hover {
+			@include transition(all 0.5s ease-out);
+			color: $red-orange;
+			cursor: pointer;
+			text-decoration: none;
+		}
+	}
+
+	&-line {
+    @include transition(all .3s ease-out);
+    border-top: .2rem solid $dark-grey;
+    display: block;
+    width: 5rem;
+  }
+	p {
+		font-family: $sans-font;
+	}
+
+	.post-frontview {
+		margin: 3rem 1rem;
+    color: $grey-bck;
     &:hover .catalogue-line,
     &:focus .catalogue-line {
-      width: 10rem;
+      width: 40rem;
+      border-top: .2rem solid $red-orange;
     }
-
     &:last-child {
       border: 0;
     }
-  }
-
-  p {
-    font-family: $sans-font;
-  }
-
-  &-time {
-    color: $default-tint;
-    font-family: $palatino;
-    font-size: .8rem;
-    letter-spacing: .5px;
-  }
-
-  &-title {
-    color: $default-shade;
-    display: block;
-    font-family: $sans-font;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: .5rem 0;
-  }
-
-  &-line {
-    @include transition(all .3s ease-out);
-    border-top: .2rem solid $default-shade;
-    display: block;
-    width: 2rem;
   }
 }

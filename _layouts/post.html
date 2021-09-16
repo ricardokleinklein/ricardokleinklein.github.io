@@ -2,24 +2,48 @@
 layout: default
 ---
 
-<div class="post">
-	<div class="post-info">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-		{% if page.date %}
-			<span>Published on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
-		{% endif %}
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			{{ page.title | escape }}
+		</h1>
+
+		<p class="post-meta center">
+			<time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+				{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+				Published on {{ page.date | date: date_format }}
+			</time>
+
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				by <span itemprop="name">
+					{{ site.author }}
+				</span>
+			</span>
+		</p>
+
+		<p class="post-meta">
+			Estimated reading time: {% include reading_time.html %}
+		</p>
+
+		<p class="post-meta">
+			<span>
+				Tags: 
+				{% for tag in page.tags %}
+					{% capture tag_name %}
+						{{ tag }}
+					{% endcapture %}
+					<a class="post-tag" href="{{ site.baseurl | absolute_url }}tag/{{ tag_name }}">
+						{{ tag_name }}
+					</a>
+				{% endfor %}
+			</span>
+		</p>
+
+	</header>
+
+	<div class="post-content" itemprop="articleBody">
+		{{ content }}
 	</div>
 
-	<h1 class="post-title">{{ page.title }}</h1>
-	<div class="post-line"></div>
-
-	{{ content }}
-</div>
-
-<div class="pagination">
-  <a href="#" class="top">Top</a>
-</div>
-
-{% if page.date %}
-  {% include disqus.html %}
-{% endif %}
+</article>

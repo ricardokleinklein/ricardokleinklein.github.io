@@ -1,0 +1,32 @@
+/**
+* List of publications
+*/
+
+.paper-link {
+	height: 15rem;
+	width: 100%;
+	margin: .05rem;
+	padding: 1rem;
+
+	&:hover {
+		@include transition(all 0.3s ease-out);
+		box-shadow: $shadow-grey 0px 5px 15px;
+		vertical-align: middle;
+// 		cursor: pointer;
+// 		text-decoration: none;
+	}
+
+	img {
+		width: 35%;
+		height: 90%;
+		max-width: 35%;
+		max-height: 90%;
+		vertical-align: middle;
+		margin-right: 1rem;
+	}
+
+	h3, h4, h5 {
+		vertical-align: middle;
+	}
+
+}

@@ -1,32 +1,46 @@
 ---
 layout: default
-title: Home
 ---
 
+<div class="home other-pages">
+
+<!-- Catalogue of available posts -->
 <div class="catalogue">
-	{% for post in paginator.posts %}
-	<a href="{{ post.url | prepend: site.url }}" class="catalogue-item">
-		<div>
-			<time datetime="{{ post.date }}" class="catalogue-time">
-				{{ post.date | date: "%B %d, %Y" }}
-			</time>
-			<h1 class="catalogue-title"> {{ post.title }}</h1>
-			<div class="catalogue-line"></div>
-			<p>
-				{{ post.content | truncatewords: 30 | strip_html }}
-			</p>
+
+	To appear soon ;)
+
+	{% for post in site.posts %}
+			<!-- Post's metadata -->
+			<div class="post-frontview">
+				<time datetime="{{ post.date }}" class="catalogue-time">
+					{{ post.date | date: "%b %d, %Y" }} -
+				</time>
+				<span class="post-meta">
+					Tags:
+				{% for tag in post.tags %}
+					{% capture tag_name %}
+						{{ tag }}
+					{% endcapture %}
+					<a class="post-tag" href="{{ site.baseurl }}/tag/{{ tag_name }}">
+						<nobr>
+							{{ tag_name | escape }}
+						</nobr>
+						&nbsp;
+					</a>
+				{% endfor %}
+			</span>
+
+			<!-- Post excerpt and title -->
+				<h2>
+					<a class="catalogue-title" href="{{ post.url | relative_url }}">
+						{{ post.title | escape }}
+					</a>
+					<div class="catalogue-line"></div>
+						{% if post.excerpt %}
+							{{ post.excerpt }}
+						{% endif %}
+				</h2>
 		</div>
 	{% endfor %}
-</a>
 </div>
-
-<div class="pagination">
-	{% if paginator.previous_page %}
-		<a href="{{ paginator.previous_page_path | prepend: site.url }}" class="left arrow">&#8592; Previous</a>
-	{% endif %}
-	{% if paginator.next_page %}
-		<a href="{{ paginator.next_page_path | prepend: site.url }}" class="right arrow"> Next &#8594;</a>
-	{% endif %}
-
-	<span>{{ paginator.page }}</span>
 </div>

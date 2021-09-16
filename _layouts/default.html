@@ -2,29 +2,24 @@
 <html>
 
 	{% include head.html %}
-	{% include meta.html %}
 
-	<body>
-		<nav class="nav">
-			<div class="nav-container">
-				<a href="{{ site.baseurl }}/">
-					<h2 class="nav-title">{{ site.name }}</h2>
-				</a>
-				<ul>
-					<li><a href="{{ site.baseurl }}/">Blog</a></li>
-					<li><a href="{{ '/about' | prepend: site.url }}">About</a></li>
-					<li><a href="{{ '/publications' | prepend: site.url }}">Publications</a></li>
-					<li><a href="{{ site.baseurl }}/resume.pdf" target="_blanck">CV</a></li>
-				</ul>
+<body>
+
+	{% include header.html %}
+
+	<main class="page-content" aria-label="Content">
+			<div class="wrapper">
+				{{ content }}
+			
+				{% include patreon_button.html %}
+				{% if page.date %}
+					{% include disqus.html %}
+				{% endif %}
 			</div>
-		</nav>
+	</main>
 
-		<main>
-			{{ content }}
-		</main>
+	{% include footer.html %}
 
-		{% include footer.html %}
-    	{% include analytics.html %}
+</body>
 
-	</body>
 </html>
