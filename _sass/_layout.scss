@@ -48,7 +48,7 @@
 	}
 	.page-link {
 		@media screen and (max-width:600px) {
-			@include relative-font-size(1);
+			@include relative-font-size(0.85);
 		}
 		@media screen and (min-width:600px) {
 			@include relative-font-size(1.35);
@@ -130,7 +130,7 @@
 	box-shadow: $shadow-grey 0px 5px 15px;
 	p {
 		@media screen and (max-width:600px) {
-			@include relative-font-size(1.15);
+			@include relative-font-size(1);
 		}
 		@media screen and (min-width:600px) {
 			@include relative-font-size(1.75);

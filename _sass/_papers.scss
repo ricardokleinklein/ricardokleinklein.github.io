@@ -28,7 +28,7 @@
 	h3, h4, h5 {
 		vertical-align: middle;
 		@media screen and (max-width:600px) {
-			@include relative-font-size(.65);
+			@include relative-font-size(.5);
 		}
 	}
 
