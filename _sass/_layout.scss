@@ -11,7 +11,7 @@
 
 .site-title {
 	@media screen and (max-width:600px) {
-		@include relative-font-size(1.2);
+		@include relative-font-size(1.15);
 	}
 	@media screen and (min-width:600px) {
 		@include relative-font-size(2);
@@ -48,7 +48,7 @@
 	}
 	.page-link {
 		@media screen and (max-width:600px) {
-			font-size: 0.95rem;
+			font-size: 1.15rem;
 		}
 		@media screen and (min-width:600px) {
 			@include relative-font-size(1.35);

@@ -66,14 +66,14 @@
 
 // -------------------------------------------------
 
-// .image-caption {
-//     text-align: center;
-//     width: 85%;
-//     margin: 10px auto 35px;
-//     line-height: 1.35;
-//     color: $spanish-grey;
-//     font-style: italic;
-// }
+.image-caption {
+    text-align: center;
+    width: 85%;
+    margin: .5rem auto 1rem;
+    line-height: 1.35;
+    color: $spanish-grey;
+    font-style: italic;
+}
 
 // -------------------------------------------------
 
@@ -130,16 +130,25 @@ pre {
 
 .post-content {
   margin-bottom: $spacing-unit;
+  font-size: 1.25rem;
+  color: $dark-grey;
 
+  .edit {
+    color: $light-grey;
+  }
+
+  b, strong {
+        color: $red-orange;
+      }
   blockquote {
     background-color: $light-shadow;
     text-align: justify;
     margin-left: 1.15rem;
-    // border-left: .5rem solid $spanish-grey;
+    border-left: .5rem solid $spanish-grey;
     border-radius: 3px;
     box-shadow: $shadow-grey 0px 5px 15px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    // margin-top: 2rem;
+    // margin-bottom: 2rem;
 
     p {
       color: $spanish-grey;
@@ -178,9 +187,4 @@ pre {
       line-height: 2rem;
       text-align: justify;
     }
-
-    b {
-      color: $red-orange;
-    }
-
 }
