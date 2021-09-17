@@ -15,7 +15,7 @@ footer-links:
 disqus: https-ricardokleinklein-github-io
 
 # Build settings
-markdown: krandown
+markdown: kramdown
 excerpt_separator: <!--eoe-->
 kramdown:
   input: GFM
