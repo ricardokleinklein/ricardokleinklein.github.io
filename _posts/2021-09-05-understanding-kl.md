@@ -33,14 +33,20 @@ In Information Theory, the concept of **entropy** is widespread almost everywher
 Although loosely related to the thermodynamic term, in this context we define it as:
 
 $$
-H(p) = -\sum^N_{i=1} p(x_i)\log p(x_i) \text{ [discrete case]}
+H(p) = -\sum^N_{i=1} p(x_i)\log p(x_i) \text{ [discrete]}
 $$
 
 $$
-H(p)= - \int_x p(x)\log(x) dx = - \mathbb{E}_{x \sim p} \log(x) \text{ [continuous case]}
+H(p)= - \int_x p(x)\log(x) dx \text{ [continuous]}
 $$
 
 where $$N$$ denotes the number of elements or observations available from the system that yielded the probability density.
+In a general way, it can be written as:
+
+$$
+H(p) = - \mathbb{E}_{x \sim p} \log(x)
+$$
+
 $$\mathbb{E}_{x \sim p}$$ denotes the expected value when $$x$$ is sampled from the probability distribution $$p(x)$$.
 In Computer Science, the $$\log p(x_i)$$ is usually $$\log_2 p(x_i)$$, and it is a measure of the "minimum amount of bits needed to encode a piece of information". You can think of it as a way to interpret how much information there's within a system.
 
@@ -51,9 +57,14 @@ H(p, q) = -\sum_x p(x) \log q(x)
 $$
 
 $$
-H(p, q) = -\int_x p(x) \log q(x) dx = \mathbb{E}_{x\sim p}\log q(x)
+H(p, q) = -\int_x p(x) \log q(x) dx
 $$
 
+Equivalently,
+
+$$
+H(p, q) = -\mathbb{E}_{x\sim p}\log q(x)
+$$
 
 # Distances, Metrics & Divergences
 
@@ -80,11 +91,17 @@ Divergences are a special subset of statistical distances.
 
 The Kullback-Leibler Divergence $$D_{KL}(p\mid \mid q)$$ belongs to the family of statistical distances known as *f-divergences* (Csiszár & Shields, 2004), and is defined as:
 
-$$ D_{KL}(p \mid \mid q) = \int_x p(x)\log p(x) dx - \int_x p(x) \log q(x) dx = \int_x p(x) \log \frac{p(x)}{q(x)} dx $$
+$$ 
+D_{KL}(p \mid \mid q) = \int_x p(x)\log p(x) dx - \int_x p(x) \log q(x) dx 
+$$
+
+$$
+D_{KL}(p \mid q) = \int_x p(x) \log \frac{p(x)}{q(x)} dx
+$$
 
 which can also be written as
 
-$$ D_{KL}(p \mid \mid q) = \mathbb{E}_{x \sim p} \log p(x) - \mathbb{E}_{x \sim p} \log q(x) = \mathbb{E}_{x \sim p} \left[ \log p(x) - \log q(x) \right] $$
+$$ D_{KL}(p \mid \mid q) = \mathbb{E}_{x \sim p} \left[ \log p(x) - \log q(x) \right] $$
 
 which is easy to see is equivalent to
 
@@ -124,7 +141,11 @@ $$
 From the definition of KL divergence
 
 $$
-D_{KL}(\hat{P}_D(x) \mid \mid P_\theta(x)) = \int_x \hat{P}_D(x) \log \frac{\hat{P}_D(x)}{P_\theta(x)} dx = -H[\hat{P}_D(x)] - \int_x \hat{P}_D(x) \log P_\theta(x) dx
+D_{KL}(\hat{P}_D(x) \mid \mid P_\theta(x)) = \int_x \hat{P}_D(x) \log \frac{\hat{P}_D(x)}{P_\theta(x)} dx =
+$$
+
+$$
+= -H[\hat{P}_D(x)] - \int_x \hat{P}_D(x) \log P_\theta(x) dx
 $$
 
 when deriving the gradient of the above expression with respect to $$\theta$$,
@@ -137,7 +158,11 @@ since $$\hat{P}_D(x)$$ is independent of $$\theta$$.
 If we continue expanding the expression above,
 
 $$
-\nabla_\theta \sum_x \hat{P}_D(x) \log P_\theta(x) = \nabla_\theta \sum_x \left[ \frac{1}{N} \sum_{i=1}^N \delta_(x-x_i)   \right] \log P_\theta(x)
+\nabla_\theta \sum_x \hat{P}_D(x) \log P_\theta(x) = 
+$$
+
+$$
+\nabla_\theta \sum_x \left[ \frac{1}{N} \sum_{i=1}^N \delta_(x-x_i)   \right] \log P_\theta(x)
 $$
 
 and therefore
