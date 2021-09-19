@@ -42,7 +42,12 @@
     color: $grey-bck;
     &:hover .catalogue-line,
     &:focus .catalogue-line {
-      width: 40rem;
+    	@media screen and (max-width:600px) {
+				width: 25rem;
+			}
+			@media screen and (min-width:600px) {
+				width: 40rem;
+			}
       border-top: .2rem solid $red-orange;
     }
     &:last-child {
